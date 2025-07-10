@@ -72,6 +72,10 @@ while True:
         roll, subject = change.split(" ")
         new_marks = int(input("Enter the new mark: "))
         data[roll]['marks'][subject] = new_marks
+        total = sum(data[roll]['marks'].values())
+        percentage = total / len(subjects)
+        data[roll]['total'] = total
+        data[roll]['percentage'] = percentage
         print("Updated successfully!!")
 
     elif task == "Exit":
